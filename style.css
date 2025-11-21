@@ -1,0 +1,98 @@
+:root {
+  color-scheme: dark light;
+  --bg: #0f1115;
+  --fg: #e6e6e6;
+  --muted: #a0a6b2;
+  --accent: #4c8bf5;
+  --accent-2: #32d296;
+  --border: #262a33;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg); color: var(--fg);
+}
+
+.container { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+.titlebar { display: flex; align-items: baseline; gap: 12px; }
+.titlebar h1 { font-size: 1.25rem; margin: 0; }
+.status { color: var(--muted); font-size: 0.9rem; }
+
+.player {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  max-height: 70vh;
+  background: #000;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr auto auto auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid var(--border);
+  background: #0b0d12;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #151820;
+  color: var(--fg);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); }
+
+.seek {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.volume {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--muted);
+}
+.volume input { width: 120px; accent-color: var(--accent-2); }
+
+select {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #151820;
+  color: var(--fg);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chapters {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 10px; border-top: 1px solid var(--border);
+  background: #0b0d12;
+}
+.chapter {
+  border: 1px solid var(--border);
+  background: #151820;
+  color: var(--fg);
+  padding: 6px 8px; border-radius: 8px; cursor: pointer;
+  font-size: 0.9rem;
+}
+.chapter:hover { border-color: var(--accent); }
+
+.help { margin-top: 16px; }
+.help h2 { font-size: 1rem; margin-bottom: 8px; }
+.help ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.help li { margin: 4px 0; }
